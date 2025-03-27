@@ -10,32 +10,28 @@ import (
 	"github.com/RonaldoDevweb/planejamento-financeiro-GO/util"
 )
 
-
-//GetTransactions blabla
+// GetTransactions blabla
 func GetTransactions(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
 		return
 	}
-   
+
 	w.Header().Set("Content-Type", "application/json")
-
-    
-
 	var transactions = transaction.Transactions{
 		transaction.Transaction{
-			Title: "Salário",
-			Amount: 1500.0,
-			Type: 0,
+			Title:     "Salário",
+			Amount:    1500.0,
+			Type:      0,
 			CreatedAt: util.StringToTime("2025-03-26T11:20:05"),
 		},
-
 	}
 
 	json.NewEncoder(w).Encode(transactions)
 
 }
-//CreateATransaction conver
+
+// CreateATransaction conver
 func CreateATransaction(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "POST" {
 		w.WriteHeader(http.StatusMethodNotAllowed)
@@ -48,6 +44,5 @@ func CreateATransaction(w http.ResponseWriter, r *http.Request) {
 	_ = json.Unmarshal(body, &res)
 
 	fmt.Print(res)
-
 
 }

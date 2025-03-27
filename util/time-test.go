@@ -1,6 +1,7 @@
 package util
 
 import "testing"
+
 // TestStringToTime blabla
 func TestStringToTime(t *testing.T) {
 	var convertedTime = StringToTime("2019-02-12T10:10:05")
@@ -16,6 +17,5 @@ func TestStringToTime(t *testing.T) {
 	if convertedTime.Day() != 12 {
 		t.Errorf("Espera que o dia seja 12")
 	}
-
 
 }

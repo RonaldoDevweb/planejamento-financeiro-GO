@@ -4,9 +4,7 @@ import (
 	"github.com/RonaldoDevweb/planejamento-financeiro-GO/adapter/http"
 )
 
-func main(){
+func main() {
 	http.Init()
-	
+
 }
-
-
